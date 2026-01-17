@@ -33,25 +33,7 @@ node server.js
 5. Open index.html or run a live server for frontend testing
 
 ## Project structure
-Taste-Mart/
-│
-├─ server.js            # Main backend server
-├─ package.json         # Node.js dependencies
-├─ .env                 # Environment variables (not tracked in git)
-├─ routes/              # Express routes
-│  ├─ menu.routes.js
-│  └─ reservation.routes.js
-├─ controllers/         # Route controllers for CRUD operations
-│  ├─ menu.controller.js
-│  └─ reservation.controller.js
-├─ models/              # Mongoose schemas
-│  ├─ menu.model.js
-│  └─ reservation.model.js
-├─ public/              # Static frontend assets
-│  ├─ images/           # Menu item images
-│  ├─ css/
-│  └─ js/
-└─ README.md
+<img width="274" height="578" alt="image" src="https://github.com/user-attachments/assets/0ae378aa-5c6c-4454-a805-d1954441d7b7" />
 
 ## API Routes
 Menu
