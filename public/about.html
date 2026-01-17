@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Taste-Mart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent custom-nav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="logo" height="40" class="me-2">
+        <span class="fw-bold text-uppercase">Taste-Mart</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button id="themeToggle" class="btn btn-outline-warning ms-3">🌙</button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+          <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-about text-center text-light d-flex align-items-center justify-content-center">
+    <div>
+      <h1 class="display-4 fw-bold">Our Story</h1>
+      <p class="lead">Where passion meets perfection since 2015</p>
+    </div>
+  </section>
+
+  <section class="container py-5 fade-section">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="images/interior4.jpg" class="img-fluid rounded-3 shadow" alt="Restaurant Interior">
+      </div>
+      <div class="col-md-6">
+        <h2 class="mb-3">A Culinary Journey</h2>
+        <p>Founded in 2015, <strong>Taste-Mart</strong> brings together traditional recipes and modern creativity. Every dish we create tells a story of passion, authenticity, and innovation.</p>
+        <p>Our philosophy is simple — use fresh ingredients, respect culinary traditions, and craft experiences that leave lasting memories. From local flavors to international inspiration, we aim to redefine fine dining with warmth and artistry.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light py-5 fade-section">
+    <div class="container text-center">
+      <h2 class="mb-4">Our Mission</h2>
+      <p class="lead mx-auto" style="max-width: 800px;">
+        To create a dining experience where every detail — from flavor to ambiance — reflects our dedication to excellence, creativity, and heartfelt hospitality.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-5 fade-section">
+    <h2 class="text-center mb-5">Meet Our Team</h2>
+    <div class="row g-4">
+      <div class="col-md-4 text-center">
+        <img src="images/artie.png" class="rounded-circle mb-3 team-photo" alt="Head Chef">
+        <h5>Artie Bucco</h5>
+        <p class="text-muted">Executive Chef</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="images/alex.png" class="rounded-circle mb-3 team-photo" alt="Sous Chef">
+        <h5>Alexander Volkanovski</h5>
+        <p class="text-muted">Sous Chef</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="images/don.png" class="rounded-circle mb-3 team-photo" alt="Manager">
+        <h5>Don Draper</h5>
+        <p class="text-muted">Restaurant Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-custom py-4">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center">
+    <div class="footer-links mb-3 mb-md-0">
+      <ul class="list-unstyled">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Our Contacts</a></li>
+        <li><a href="menu.html">Menu</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social mb-3 mb-md-0">
+      <p>© 2025 Taste-Mart. All rights reserved.</p>
+    </div>
+
+    <div class="footer-logos d-flex align-items-center">
+      <img src="images/logo.png" alt="Logo 1" height="40" class="me-3">
+    </div>
+  </div>
+</footer>
+
+  <script>
+    $(window).on("scroll", function(){
+      $(".fade-section").each(function(){
+        var top = $(this).offset().top;
+        var winTop = $(window).scrollTop();
+        if (top < winTop + 600) {
+          $(this).addClass("visible");
+        }
+      });
+    });
+
+    let lastScrollTop = 0;
+const navbar = document.querySelector('.custom-nav');
+
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+
+  if (scrollTop > 150) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+
+  if (scrollTop > lastScrollTop && scrollTop > 200) {
+    navbar.classList.remove('visible');
+  } else {
+    navbar.classList.add('visible');
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
+window.addEventListener('load', () => navbar.classList.add('visible'));
+  </script>
+  <script>
+(function() {
+  const THEME_KEY = 'tasteMartTheme';
+  const body = document.body;
+  const toggle = document.getElementById('themeToggle');
+
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === 'dark') {
+    body.classList.add('dark-mode');
+    if (toggle) toggle.innerHTML = '☀️';
+  } else {
+    body.classList.remove('dark-mode');
+    if (toggle) toggle.innerHTML = '🌙';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isDark = body.classList.toggle('dark-mode');
+
+      toggle.innerHTML = isDark ? '☀️' : '🌙';
+
+      localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+    });
+  }
+})();
+</script>
+</body>
+</html>
