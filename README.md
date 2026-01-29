@@ -70,23 +70,24 @@ node server.js
 
 ## API Routes
 Auth
-Method	Endpoint	Description	Access
-POST	/api/auth/register	Register a new user	Public
-POST	/api/auth/login	Login and get JWT	Public
+
+POST	- /api/auth/register	- Register a new user	Public
+POST	- /api/auth/login	- Login and get JWT	Public
+
 Menu
-Method	Endpoint	Description	Access
-GET	/api/menu	Get all menu items	Public
-GET	/api/menu/:id	Get menu item by ID	Public
-POST	/api/menu	Create menu item	Admin
-PUT	/api/menu/:id	Update menu item	Admin
-DELETE	/api/menu/:id	Delete menu item	Admin
+
+GET	- /api/menu	- Get all menu items	- Public
+GET	- /api/menu/:id	- Get menu item by ID	- Public
+POST - /api/menu	- Create menu item - Admin
+PUT	- /api/menu/:id	- Update menu item	- Admin
+DELETE	- /api/menu/:id	- Delete menu item - Admin
 Reservations
-Method	Endpoint	Description	Access
-GET	/api/reservations	Get all reservations	Public
-GET	/api/reservations/:id	Get reservation by ID	Public
-POST	/api/reservations	Create reservation	Admin
-PUT	/api/reservations/:id	Update reservation	Admin
-DELETE	/api/reservations/:id	Delete reservation	Admin
+
+GET	- /api/reservations	- Get all reservations	- Public
+GET	- /api/reservations/:id	- Get reservation by ID	- Public
+POST - /api/reservations - Create reservation - Admin
+PUT - /api/reservations/:id - Update reservation - Admin
+DELETE - /api/reservations/:id - Delete reservation - Admin
 
 ## Screenshots
 Admin:
